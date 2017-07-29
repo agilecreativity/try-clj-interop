@@ -6,7 +6,9 @@
   :java-source-paths ["src/java"]
   :source-paths ["src/clj"]
   :aot [try-clj-interop.hello]
-  :prep-tasks [["compile" "try-clj-interop.hello" "try-clj-interop.person"]
+  :prep-tasks [["compile"
+                "try-clj-interop.hello"
+                "try-clj-interop.person"]
                "javac" "compile"]
 
   ;;:main try-clj-interop.TestHello
