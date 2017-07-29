@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+lein run -m try_clj_interop.TestHello

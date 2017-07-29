@@ -4,6 +4,7 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :java-source-paths ["src/java"]
+  :source-paths ["src/clj"]
   :aot [try-clj-interop.hello]
   :prep-tasks [["compile" "try-clj-interop.hello" "try-clj-interop.person"]
                "javac" "compile"]
