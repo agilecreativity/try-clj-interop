@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+echo "Run lein uberjar"
+lein uberjar
+
+## Then check the target
+echo "Check the target folder"
+ls -al target
+
+## With this setup we can compile and run the preceeding Java code:
+# compile the Java code with =javac=
+echo "Compile with javac command"
+javac ./src/java/TestPerson.java -cp target/try-clj-interop-0.1.0-SNAPSHOT-standalone.jar
+
+# run the code with =java= (note the . before :target/..)
+echo "Run the code using java command"
+java -cp target/try-clj-interop-0.1.0-SNAPSHOT-standalone.jar:. try_clj_interop.TestPerson

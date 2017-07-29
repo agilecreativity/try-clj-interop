@@ -1,0 +1,44 @@
+** Clojure-Java Interop Example
+
+Adapted from [[https://github.com/PacktPublishing/Clojure-Programming-Cookbook][Clojure - Programming Cookbook]]
+
+#+BEGIN_SRC sh
+# Compile and run the example
+lein run -m chapter05.TestHello
+#+END_SRC
+
+*** Usage
+
+**** Run this from the terminal
+
+#+BEGIN_SRC sh
+# if the :main is not the same as this class
+lein run -m try_clj_interop.TestPerson
+
+# or the simple example
+lein run -m try_clj_interop.TestHello
+#+END_SRC
+
+**** Creating a JAR file callable from Java
+
+#+BEGIN_SRC sh
+## Create the uberjar
+lein uberjar
+
+## Then check the target
+ls -al target
+
+## With this setup we can compile and run the preceeding Java code:
+# compile the Java code with =javac=
+javac src/java/TestPerson.java -cp target/try_clj_interop-0.1.0-SNAPSHOT-standalone.jar
+
+# run the code with =java= (note the . before :target/..)
+java src/java/TestPerson.java -cp .:target/try_clj_interop-0.1.0-SNAPSHOT-standalone.jar
+#+END_SRC
+
+*** License
+
+Copyright © 2017 Burin Choomnuan
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
